@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>net.imagej</groupId>
+		<artifactId>pom-imagej</artifactId>
+		<version>7.0.0</version>
+		<relativePath />
+	</parent>
+
+	<groupId>ij-plugins</groupId>
+	<artifactId>FLIM_Viewer</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<name>plugins/FLIM_Viewer.jar</name>
+	<description>Simple plugin for FLIM data visualization</description>
+
+	<developers>
+		<developer>
+			<id>magrunwa</id>
+			<name>Matthias Grunwald</name>
+			<email>ma.grunwald@gmx.de</email>
+			<organization>MPI BPC</organization>
+			<organizationUrl>https://www.mpibpc.mpg.de/en</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/magrunwa/flim-viewer</connection>
+		<developerConnection>scm:git:git@github.com/magrunwa/flim-viewer</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/magrunwa/flim-viewer</url>
+	</scm>
+
+	<properties>
+		<main-class>flim_viewer</main-class>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>${main-class}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
